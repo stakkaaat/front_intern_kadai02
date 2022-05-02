@@ -1,0 +1,251 @@
+.flag-base_2-3 {
+    /* 縦横比2:3になるよう指定 */
+    width: 300px;
+    height: 200px;
+    /* 境界線をわかりやすいように指定 */
+    border: 1px solid #000;
+}
+
+.flag-base_1-2 {
+    /* 縦横比1:2になるよう指定 */
+    width: 400px;
+    height: 200px;
+    /* 境界線をわかりやすいように指定 */
+    border: 1px solid #000;
+}
+
+/* 日本 */
+
+/* 例1
+.japan-pos {
+    円の位置を指定するために指定
+    position: relative;
+}
+*/
+
+/* 例2 */
+.japan-pos {
+    display: flex;
+    /* または display:grid; でも一応可 */
+}
+
+div.japan-circle {
+    /* 円直径は縦の3/5 */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #bc002e;
+}
+
+/* 例1
+.middle {
+    円を真ん中にする指定 
+    topとleftで移動させた後
+    過剰に移動させた円の半径分transformで戻す
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+*/
+
+/* 例2 */
+.middle {
+    margin: auto;
+}
+
+/* ここまで日本 */
+
+/* UAE */
+
+.green {
+    background-color: #43962a;
+}
+
+/* デフォルトなので指定しなくても良い */
+.white {
+    background-color: #fff;
+}
+
+.black {
+    background-color: #000;
+}
+
+.uae-red {
+    background-color: #eb3323;
+}
+
+/* 例1
+.uae-pos {
+    flexboxを使う
+    flex-directionでborder要素を縦並びに並べる
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.border {
+    height: calc(200px/3);
+}
+
+.stripe {
+    stripe要素だけ別で指定
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+}
+*/
+
+/* 例2 学習していないが display:grid; でも作れる */
+.uae-pos {
+    display: grid;
+    grid-template-areas:
+      "stripe border1"
+      "stripe border2"
+      "stripe border3";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 100px 1fr;
+}
+
+.stripe {grid-area: stripe;}
+.green {grid-area: border1;}
+.white {grid-area: border2;}
+.black {grid-area: border3;}
+
+/* ここまで UAE */
+
+/* 韓国 */
+
+.korean-red {
+    background-color: #cc3328;
+}
+
+.blue {
+    background-color: #0e2c7f;
+}
+
+.korea-pos {
+    display: flex;
+    position: relative;;
+}
+
+/* 
+中心の円の成形
+上に赤の半円、下に赤の半円を配置
+その上に、左に赤の小さい円、右に青い円を配置
+これらの要素をまとめたものを45°回転
+*/
+.middle-circle {
+    margin: auto;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform: rotate(45deg)
+}
+
+.semicircle-upper {
+    width: 100px;
+    height: 50px;
+    border-radius: 50px 50px 0 0;
+}
+
+.semicircle-lower {
+    width: 100px;
+    height: 50px;
+    border-radius: 0 0 50px 50px;
+}
+
+.mini-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.left-circle {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.right-circle {
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+/* ここまで円の成形 */
+
+/* 周りの長方形の成形 */
+
+/* 
+大きい長方形と小さい長方形はよく登場するので
+まとめて設定しておく
+*/
+.big-rectangle {
+    width: 50px;
+    height: calc(100px/12);
+    background-color: #000;
+}
+
+.small-rectangle {
+    width: calc(200px*11/96);
+    height: calc(100px/12);
+    background-color: #000;
+}
+
+/*
+全体の要素のブロックの指定
+*/
+.box {
+    width: 50px;
+    height: calc(200px/6);
+    /* 中身をどう配置するのかの指定 */
+    display: flex; 
+    flex-wrap: wrap; /* 折り返すように配置 */
+    justify-content: space-between; /* 両端に配置し、中身は等間隔で */
+    align-content: space-between; /* 両端に配置し、中身は等間隔で */
+    /* ここまで中身の配置指定 */
+    /* 回転させる際の初期位置を旗の中心真ん中上まで持ってくる */
+    position: absolute;
+    left: 50%;
+    /* 回転させる中心を旗の中心に */
+    transform-origin: 50% calc(200px*26/48);
+}
+
+
+.upper-left {
+    transform:
+        translate(-50%, calc(-200px/24))
+        rotate(-0.98rad);
+}
+
+.upper-right {
+    transform:
+        translate(-50%, calc(-200px/24))
+        rotate(0.98rad);
+}
+
+.lower-right {
+    transform:
+        translate(-50%, calc(-200px/24))
+        rotate(calc(90deg + 0.59rad));
+}
+
+.lower-left {
+    transform:
+        translate(-50%, calc(-200px/24))
+        rotate(calc(-90deg - 0.59rad));
+}
+
+/* ここまで韓国 */
+
+
+
+
+
+
+
+
+
+
