@@ -1,1 +1,67 @@
-Webフォント、FontAwsome を使ってみよう
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700&family=Ubuntu:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f0ef9b3157.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/font.css">
+    <title>Webフォント、FontAwesomeを使ってみよう</title>
+</head>
+<body>
+  <section>
+    <h3>Webフォント</h3>
+    <p>
+      デフォルト:<br>
+      Almost before we knew it, we had left the ground.
+    </p>
+
+    <p class="roboto thin">
+      roboto thin 100:<br>  
+      Almost before we knew it, we had left the ground.
+    </p>
+
+    <p class="roboto medium">
+      roboto medium 500:<br>
+      Almost before we knew it, we had left the ground.
+    </p>
+
+    <p class="roboto bold">
+      roboto bold 700:<br>
+      Almost before we knew it, we had left the ground.
+    </p>
+
+    <p class="ubuntu medium">
+      ubuntu medium 500<br>  
+      Almost before we knew it, we had left the ground.
+    </p>
+
+    <p class="ubuntu italic medium">
+      ubuntu medium 500 italic<br>  
+      Almost before we knew it, we had left the ground.
+    </p>
+  </section>
+
+  <section>
+    <h3>FontAwesome を使ってみよう</h3>
+    <div>
+      HTMLタグで使用<br>
+      <i class="fa-brands fa-twitter"></i>
+      <!-- fontawesome で検索し、コピペ -->
+    </div>
+
+    <div>
+      cssで使用<br>
+      <p class="use-icon-before icon">検索</p>
+    </div>
+
+    <div>
+      アニメーション<br>
+      <i class="fa-solid fa-circle-notch fa-spin"></i> <!-- クラスに fa-spin を指定で、回転 -->
+  </section>
+
+</body>
+</html>

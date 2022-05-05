@@ -1,1 +1,57 @@
-いろいろなフォームを使ってみよう
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>いろいろなフォームを作ってみよう</title>
+</head>
+<body>
+  <h1>いろいろなフォーム</h1>
+  <form action="">
+    <p>
+      <label>メールアドレス：<br>
+      <input type="email">
+      </label>
+    </p>
+
+    <p>
+      <label>好きなものは？(ラジオボタン):<br>
+        <input type="radio" name="q2" value="curry">カレー
+        <input type="radio" name="q2" value="sushi">お寿司
+        <input type="radio" name="q2" value="bbq">焼肉
+        <input type="radio" name="q2" value="others">その他
+      </label>
+    </p>
+
+    <p>
+      <label>好きなものは？(チェックボックス):<br>
+        <input type="checkbox" name="q3" value="curry">カレー
+        <input type="checkbox" name="q3" value="sushi">お寿司
+        <input type="checkbox" name="q3" value="bbq">焼肉
+        <input type="checkbox" name="q3" value="others">その他
+      </label>
+    </p>
+
+    <p>
+      <label>カレンダー：<br>
+        <input type="date">
+      </label>
+    </p>
+
+    <p>
+      <label>range:<br>
+        <input type="range">
+      </label>
+    </p>
+
+    <p>
+      <label>パスワード：<br>
+        <input type="password">
+      </label>
+    </p>
+
+     <input type="submit">
+  </form>
+</body>
+</html>
