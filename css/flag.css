@@ -28,7 +28,6 @@
 /* 例2 */
 .japan-pos {
     display: flex;
-    /* または display:grid; でも一応可 */
 }
 
 div.japan-circle {
@@ -36,7 +35,7 @@ div.japan-circle {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background-color: #bc002e;
+    background-color: #d7003a;
 }
 
 /* 例1
@@ -61,7 +60,7 @@ div.japan-circle {
 /* UAE */
 
 .green {
-    background-color: #43962a;
+    background-color: #00732f;
 }
 
 /* デフォルトなので指定しなくても良い */
@@ -74,58 +73,40 @@ div.japan-circle {
 }
 
 .uae-red {
-    background-color: #eb3323;
+    background-color: #ff0000;
 }
 
-/* 例1
 .uae-pos {
-    flexboxを使う
-    flex-directionでborder要素を縦並びに並べる
+    /* flexboxを使う */
+    /* flex-directionでborder要素を縦並びに並べる */
     display: flex;
     flex-direction: column;
-    position: relative;
+    flex-wrap: wrap;
+
 }
 
 .border {
+    width: 300px;
     height: calc(200px/3);
 }
 
 .stripe {
-    stripe要素だけ別で指定
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100px;
     height: 100%;
 }
-*/
 
-/* 例2 学習していないが display:grid; でも作れる */
-.uae-pos {
-    display: grid;
-    grid-template-areas:
-      "stripe border1"
-      "stripe border2"
-      "stripe border3";
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 100px 1fr;
-}
 
-.stripe {grid-area: stripe;}
-.green {grid-area: border1;}
-.white {grid-area: border2;}
-.black {grid-area: border3;}
 
 /* ここまで UAE */
 
 /* 韓国 */
 
 .korean-red {
-    background-color: #cc3328;
+    background-color: #cd2e3a;
 }
 
 .blue {
-    background-color: #0e2c7f;
+    background-color: #0047a0;
 }
 
 .korea-pos {
@@ -137,14 +118,12 @@ div.japan-circle {
 中心の円の成形
 上に赤の半円、下に赤の半円を配置
 その上に、左に赤の小さい円、右に青い円を配置
-これらの要素をまとめたものを45°回転
+これらの要素をまとめたものを回転
 */
 .middle-circle {
     margin: auto;
     position: relative;
-    width: 100px;
-    height: 100px;
-    transform: rotate(45deg)
+    transform: rotate(0.98rad)
 }
 
 .semicircle-upper {
@@ -186,13 +165,13 @@ div.japan-circle {
 */
 .big-rectangle {
     width: 50px;
-    height: calc(100px/12);
+    height: calc(200px*2/48);
     background-color: #000;
 }
 
 .small-rectangle {
-    width: calc(200px*11/96);
-    height: calc(100px/12);
+    width: calc(200px*11/96); /* 旗の高さを基準に計算している */
+    height: calc(200px*2/48);
     background-color: #000;
 }
 
@@ -201,7 +180,7 @@ div.japan-circle {
 */
 .box {
     width: 50px;
-    height: calc(200px/6);
+    height: calc(200px*8/48);
     /* 中身をどう配置するのかの指定 */
     display: flex; 
     flex-wrap: wrap; /* 折り返すように配置 */
@@ -212,14 +191,14 @@ div.japan-circle {
     position: absolute;
     left: 50%;
     /* 回転させる中心を旗の中心に */
-    transform-origin: 50% calc(200px*26/48);
+    transform-origin: 50% calc(200px*26/48); /* 円との距離を比率通りに保ちつつ中心を設定している */
 }
 
 
 .upper-left {
     transform:
-        translate(-50%, calc(-200px/24))
-        rotate(-0.98rad);
+        translate(-50%, calc(-200px/24)) 
+        rotate(-0.98rad);  /* 円と距離を比率通りに守って回転 */
 }
 
 .upper-right {
